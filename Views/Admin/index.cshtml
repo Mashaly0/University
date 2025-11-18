@@ -1,0 +1,29 @@
+﻿@model IEnumerable<University.Models.ApplicationUser>
+
+<h2>المستخدمون في انتظار الموافقة</h2>
+
+<table>
+    <tr>
+        <th>البريد</th>
+        <th>الحالة</th>
+        <th>تحكم</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>@user.Email</td>
+            <td>@(user.IsApproved ? "مقبول" : "قيد الانتظار")</td>
+            <td>
+                @if (!user.IsApproved)
+                {
+                    <a href="/Admin/Approve/@user.Id">موافقة</a>
+                }
+            </td>
+        </tr>
+    }
+</table>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

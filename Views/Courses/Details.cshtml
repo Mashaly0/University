@@ -1,0 +1,45 @@
+﻿@model University.Models.Course
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "تفاصيل الكورس";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>📘 @Localizer["Detalis"]</h3>
+        </div>
+        <div class="card-body">
+            <dl class="row fs-5">
+                <dt class="col-sm-3">@Localizer["Num"]:</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3">@Localizer["Name"]:</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3">@Localizer["Status"]:</dt>
+                <dd class="col-sm-9">
+                    @if (Model.IsAvailable)
+                    {
+                        <span class="badge bg-success px-3 py-2">✅ @Localizer["AvailableY"]</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger px-3 py-2">❌ @Localizer["AvailableN"]</span>
+                    }
+                </dd>
+            </dl>
+        </div>
+        <div class="card-footer text-center">
+            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning me-2">
+                ✏️ @Localizer["Edit"]
+            </a>
+            <a asp-action="GetCourses" class="btn btn-secondary">
+                ⬅️ @Localizer["Back"]
+            </a>
+        </div>
+    </div>
+</div>

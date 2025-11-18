@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h3 class="mb-0">🔐 @Localizer["Logini"]</h3>
+                </div>
+
+                <div class="card-body p-4">
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">@Localizer["Email"]</label>
+                            <input type="email" name="email" id="email" class="form-control form-control-lg" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-semibold">@Localizer["Password"]</label>
+                            <input type="password" name="password" id="password" class="form-control form-control-lg" required />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fs-5 rounded-3">
+                            @Localizer["Login"]
+                        </button>
+                    </form>
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="mt-3">
+                            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                            {
+                                <div class="alert alert-danger text-center py-2">@error.ErrorMessage</div>
+                            }
+                        </div>
+                    }
+                </div>
+
+                <div class="card-footer text-center bg-light">
+                    <p class="mb-0">
+                        @Localizer["NoAcc?"]
+                        <a href="/Auth/Register" class="text-decoration-none fw-semibold">إنشاء حساب جديد</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

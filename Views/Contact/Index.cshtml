@@ -1,0 +1,27 @@
+﻿@model ContactViewModel
+
+<h2>Contact Us</h2>
+
+@if (ViewBag.Success != null)
+{
+    <div class="alert alert-success">@ViewBag.Success</div>
+}
+
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+
+    <div class="form-group">
+        <label>Message</label>
+        <textarea asp-for="Message" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Send</button>
+</form>

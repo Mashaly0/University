@@ -1,0 +1,52 @@
+﻿@model University.Models.Course
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "إضافة كورس جديد";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+            <h3>➕ @Localizer["Add"]</h3>
+        </div>
+
+        <div class="card-body">
+            <!-- ✅ لازم نضيف enctype="multipart/form-data" علشان نقدر نرفع الملفات -->
+            <form asp-action="Create" method="post" enctype="multipart/form-data" class="p-3">
+
+                <!-- 🟢 اسم الكورس -->
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label fw-bold"></label>
+                    <input asp-for="Name" class="form-control" placeholder=@Localizer["AddC"] />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <!-- 🟢 حالة الكورس -->
+                <div class="form-check mb-4">
+                    <input asp-for="IsAvailable" class="form-check-input" />
+                    <label asp-for="IsAvailable" class="form-check-label">@Localizer["Available"]</label>
+                </div>
+
+                <!-- 🟢 زر رفع الملف -->
+                <div class="mb-4">
+                    <label class="form-label fw-bold">📎 @Localizer["UU"] (PDF / Excel / Word)</label>
+                    <input type="file" name="uploadedFile" class="form-control"
+                           accept=".pdf,.xls,.xlsx,.doc,.docx" />
+                    <small class="text-muted">@Localizer["UploadD"]</small>
+                </div>
+
+                <!-- 🟢 أزرار الحفظ والإلغاء -->
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success px-4">💾 @Localizer["Save"]</button>
+                    <a asp-action="GetCourses" class="btn btn-secondary px-4">⬅️ @Localizer["Delete"]</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

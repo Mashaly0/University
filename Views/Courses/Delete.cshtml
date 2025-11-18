@@ -1,0 +1,46 @@
+﻿@model University.Models.Course
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Title"];
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-danger text-white text-center">
+            <h3>🗑 @Localizer["Delete"]</h3>
+        </div>
+
+        <div class="card-body">
+            <h5 class="text-center mb-4">@Localizer["Sure?"]</h5>
+
+            <dl class="row fs-5">
+                <dt class="col-sm-3 fw-bold">@Localizer["Num"]:</dt>
+                <dd class="col-sm-9">@Model.Id</dd>
+
+                <dt class="col-sm-3 fw-bold">@Localizer["Name"]:</dt>
+                <dd class="col-sm-9">@Model.Name</dd>
+
+                <dt class="col-sm-3 fw-bold">@Localizer["Availabe?"]؟</dt>
+                <dd class="col-sm-9">
+                    @if (Model.IsAvailable)
+                    {
+                        <span class="badge bg-success">@Localizer["AvailabeY"]</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">@Localizer["AvailabeN"]</span>
+                    }
+                </dd>
+            </dl>
+
+            <form asp-action="Delete" method="post" class="text-center mt-4">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-danger px-4">🗑 @Localizer["Sure"]</button>
+                <a asp-action="GetCourses" class="btn btn-secondary px-4">⬅️ @Localizer["Back"]</a>
+            </form>
+        </div>
+    </div>
+</div>

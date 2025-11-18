@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CoopTrainingPlatform" xml:space="preserve">
+    <value>Cooperative Training Platform</value>
+  </data>
+  <data name="KFMC" xml:space="preserve">
+    <value>King Fahd Medical City</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Quote" xml:space="preserve">
+    <value>"We turn vision into reality..."</value>
+  </data>
+  <data name="AboutPara1" xml:space="preserve">
+    <value>King Fahd Medical City began as a pioneering project that has now come to fruition. This idea was conceived by the Custodian of the Two Holy Mosques, King Fahd bin Abdulaziz – may God have mercy on him – and its foundation stone was laid by His Royal Highness Prince Salman bin Abdulaziz, then Governor of Riyadh, in 1403 AH (1983 CE).</value>
+  </data>
+  <data name="AboutPara2" xml:space="preserve">
+    <value>The medical city became operational during the reign of King Fahd bin Abdulaziz, and it was officially opened by the then Crown Prince, King Abdullah bin Abdulaziz - may God have mercy on him - on 21/08/1425 AH, corresponding to 05/10/2004 AD.</value>
+  </data>
+  <data name="AboutPara3" xml:space="preserve">
+    <value>The city is strategically located in the heart of Riyadh, the capital of Saudi Arabia, and is one of the largest and fastest-growing medical complexes in the Middle East with a capacity of (1200) beds.</value>
+  </data>
+  <data name="AboutPara4" xml:space="preserve">
+    <value>The city includes a highly efficient and experienced management team, all working towards one goal: for King Fahd Medical City to be a reference and example in healthcare, attracting patients from all over the region and at all levels of treatment, where medical and professional services are integrated in various specialties to provide care for visitors, whose number is estimated annually at more than 30,000 inpatients and 500,000 outpatients.</value>
+  </data>
+  <data name="AboutPara5" xml:space="preserve">
+    <value>Given the qualified staff at KFMC, it provides high-quality care, is committed to excellence in dealing with patients, and achieves one of its top priorities: disseminating knowledge, developing and advancing researchers, and making community services a success.</value>
+  </data>
+  <data name="RiyadhHealthCluster" xml:space="preserve">
+    <value>Riyadh Second Health Cluster</value>
+  </data>
+  <data name="RiyadhHealthClusterEn" xml:space="preserve">
+    <value>Riyadh Second Health Cluster</value>
+  </data>
+  <data name="HealthHoldingCompany" xml:space="preserve">
+    <value>Health Holding Company</value>
+  </data>
+  <data name="ApplyNow" xml:space="preserve">
+    <value>Apply for Training Now</value>
+  </data>
+  <data name="CoopTrainingDesc" xml:space="preserve">
+    <value>"We are turning vision into reality and making the dream a reality."</value>
+  </data>
+  <data name="KFMCVisionTitle" xml:space="preserve">
+    <value>KFMC Vision</value>
+  </data>
+  <data name="KFMCVisionText" xml:space="preserve">
+    <value>Leading the transformation...</value>
+  </data>
+  <data name="KFMCMissionTitle" xml:space="preserve">
+    <value>KFMC Mission</value>
+  </data>
+  <data name="KFMCMissionText" xml:space="preserve">
+    <value>Implementing digital strategies...</value>
+  </data>
+  <data name="ContactTitle" xml:space="preserve">
+    <value>Let’s Hear From You</value>
+  </data>
+  <data name="ContactSubtitle" xml:space="preserve">
+    <value>Do you have a question about Cooperative Training?</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>FullName</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Your Message</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+</root>

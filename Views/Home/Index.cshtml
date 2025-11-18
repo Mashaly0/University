@@ -1,0 +1,544 @@
+﻿@model IEnumerable<University.Models.Course>
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "منصة التدريب التعاوني";
+}
+
+<!-- Hero Section -->
+<div class="container-fluid p-0 mb-5">
+    <div class="hero-section position-relative text-white">
+
+        <!-- Background Image -->
+        <img src="~/img/images.jpg"
+             class="w-100 rounded-4"
+             style="height: 380px; object-fit: cover; filter: brightness(60%);" />
+
+        <!-- Text Content -->
+        <div class="position-absolute top-50 start-50 translate-middle text-center" style="max-width: 800px;">
+            <h1 class="fw-bold display-5 mb-3">
+                @Localizer["CoopTrainingPlatform"]<br/>
+                @Localizer["KFMC"]
+            </h1>
+
+            <p class="fs-5 mb-4">
+                @Localizer["CoopTrainingDesc"]
+            </p>
+
+            <a href="#" class="btn btn-info btn-lg px-4 py-2 fw-semibold rounded-3">
+                @Localizer["ApplyNow"]
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="about-section-wrapper">
+    <div class="content-container">
+        <h1 class="section-title">@Localizer["AboutUs"]</h1>
+        <p class="quote">@Localizer["Quote"]</p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-md-11">
+                <p class="content-paragraph">@Localizer["AboutPara1"]</p>
+                <p class="content-paragraph">@Localizer["AboutPara2"]</p>
+                <p class="content-paragraph">@Localizer["AboutPara3"]</p>
+                <p class="content-paragraph">@Localizer["AboutPara4"]</p>
+                <p class="content-paragraph">@Localizer["AboutPara5"]</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-content">
+        <div class="logo-placeholder"></div>
+        <p class="main-title">@Localizer["RiyadhHealthCluster"]</p>
+        <p class="subtitle-en">@Localizer["RiyadhHealthClusterEn"]</p>
+        <p class="small-text">@Localizer["HealthHoldingCompany"]</p>
+    </div>
+</div>
+
+<!-- Vision & Mission Section -->
+<div class="vision-mission-section-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-card">
+                    <div class="icon-circle"><span class="icon-vision"></span></div>
+                    <h3 class="card-title">@Localizer["KFMCVisionTitle"]</h3>
+                    <p class="card-text">@Localizer["KFMCVisionText"]</p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="info-card">
+                    <div class="icon-circle"><span class="icon-mission"></span></div>
+                    <h3 class="card-title">@Localizer["KFMCMissionTitle"]</h3>
+                    <p class="card-text">@Localizer["KFMCMissionText"]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Form Section -->
+<div class="contact-form-section-wrapper">
+    <div class="container">
+        <h1 class="main-section-title">@Localizer["ContactTitle"]</h1>
+        <p class="section-subtitle">@Localizer["ContactSubtitle"]</p>
+
+        <div class="contact-box">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-side">
+                        <h2>@Localizer["ContactUs"]</h2>
+
+                        <div class="contact-item">
+                            <div class="contact-icon-placeholder"></div>
+                            <div class="contact-details">
+                                <span class="label">@Localizer["Location"]</span>
+                                <span class="value">@Localizer["LocationValue"]</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon-placeholder"></div>
+                            <div class="contact-details">
+                                <span class="label">@Localizer["Phone"]</span>
+                                <span class="value">@Localizer["PhoneValue"]</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon-placeholder"></div>
+                            <div class="contact-details">
+                                <span class="label">@Localizer["Email"]</span>
+                                <span class="value">@Localizer["EmailValue"]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-side">
+                        <form>
+                            <label for="name" class="form-label">@Localizer["FullName"] <span style="color:red">*</span></label>
+                            <input type="text" id="name" class="form-control-custom" required>
+
+                            <label for="email" class="form-label">@Localizer["Email"] <span style="color:red">*</span></label>
+                            <input type="email" id="email" class="form-control-custom" required>
+
+                            <label for="phone" class="form-label">@Localizer["Phone"] <span style="color:red">*</span></label>
+                            <input type="tel" id="phone" class="form-control-custom" required>
+
+                            <label for="message" class="form-label">@Localizer["Message"]</label>
+                            <textarea id="message" class="form-control-custom"></textarea>
+
+                            <button type="submit" class="submit-button">@Localizer["Send"]</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="about-section-wrapper">
+    <style>
+
+        .about-section-wrapper {
+            padding: 50px 0;
+            background-color: #ffffff; /* لون خلفية القسم أبيض */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* ظل خفيف للقسم */
+            border-radius: 8px;
+            /* تطبيق الخط الجديد */
+            font-family: Calibri, sans-serif;
+            /* إذا أردت تجربة Cairo: font-family: 'Cairo', sans-serif; */
+            text-align: center; /* توسيط المحتوى */
+            direction: rtl; /* اتجاه النص من اليمين لليسار */
+        }
+
+        .section-title {
+            color: #007bff;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+            .section-title::after {
+                content: "";
+                display: block;
+                width: 50px;
+                height: 4px;
+                background-color: #007bff;
+                margin: 10px auto 0;
+                border-radius: 2px;
+            }
+
+        .quote {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #6c757d;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .content-paragraph {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #343a40;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+        /* لتضييق عرض النص وتوسيعه داخل الحاوية */
+        .content-container {
+            width: 90%;
+            max-width: 900px; /* تحديد أقصى عرض للنص */
+            margin: 0 auto; /* توسيط الحاوية */
+            text-align: center;
+        }
+    </style>
+    <div class="card-section-wrapper">
+        <style>
+            /* التنسيقات الداخلية */
+            .card-section-wrapper {
+                /* تطبيق الخط الذي طلبته سابقًا لتحسين المظهر */
+                font-family: Calibri, sans-serif;
+                direction: rtl;
+                text-align: center;
+                padding: 50px 0;
+            }
+
+            .card-content {
+                /* لون الخلفية المحدد: أزرق داكن */
+                background-color: #00aaff;
+                /* لون النص المحدد: أبيض */
+                color: #ffffff;
+                border-radius: 12px; /* حواف مستديرة */
+                padding: 40px 20px;
+                max-width: 450px; /* تحديد عرض البطاقة */
+                margin: 0 auto 30px; /* توسيط البطاقة وإضافة مسافة أسفلها */
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* ظل لجعلها بارزة */
+            }
+
+            /* تنسيق الشعار (استبدل الصورة بنص أو اتركه فارغاً) */
+            .logo-placeholder {
+                /* حجم ومسافة للشعار */
+                height: 100px;
+                width: 100px;
+                margin: 0 auto 20px;
+                /* يمكن تركها فارغة أو وضع صورة */
+            }
+
+            /* تنسيق العناوين */
+            .main-title {
+                font-size: 1.8rem;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .subtitle-en {
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+            }
+
+            .small-text {
+                font-size: 0.9rem;
+                opacity: 0.8;
+                margin-top: 5px;
+            }
+
+            /* تنسيق الزر */
+            .action-button {
+                /* لون الخلفية (أزرق سماوي/تركوازي) */
+                background-color: #00aaff;
+                color: #ffffff;
+                border: none;
+                padding: 12px 30px;
+                font-size: 1.1rem;
+                font-weight: bold;
+                border-radius: 8px;
+                cursor: pointer;
+                text-decoration: none; /* إزالة خط تحت النص إذا كان رابط */
+                display: inline-block; /* ليتصرف كالزر */
+                transition: background-color 0.3s;
+            }
+
+                .action-button:hover {
+                    background-color: #0088cc;
+                }
+
+        </style>
+
+
+
+
+
+
+
+
+<div class="vision-mission-section-wrapper">
+    <style>
+
+        .vision-mission-section-wrapper {
+            font-family: Calibri, sans-serif;
+            direction: rtl;
+            padding: 50px 0;
+            background-color: #f8f9fa; /* خلفية خفيفة للقسم */
+            text-align: center;
+        }
+
+        /* تنسيق البطاقة الفردية */
+        .info-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            height: 100%; /* لضمان تساوي ارتفاع البطاقتين */
+            border: 1px solid #e0e0e0;
+        }
+
+        /* تنسيق الأيقونة الدائرية (تم استبدالها بدائرة لونية) */
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* الإطار الأزرق الخارجي للأيقونات */
+            border: 3px solid #007bff;
+        }
+
+        /* لتمثيل أيقونة "الرؤية" (العين) */
+        .icon-vision {
+            font-size: 30px;
+            color: #007bff;
+            /* يمكن وضع حرف V كبديل مؤقت للأيقونة */
+            content: "V";
+        }
+
+        /* لتمثيل أيقونة "الرسالة" (المصباح) */
+        .icon-mission {
+            font-size: 30px;
+            color: #007bff;
+            /* يمكن وضع حرف M كبديل مؤقت للأيقونة */
+            content: "M";
+        }
+
+        /* تنسيق العناوين */
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #343a40;
+            margin-bottom: 15px;
+        }
+
+        /* تنسيق النصوص */
+        .card-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #6c757d;
+            text-align: justify; /* محاذاة النص لليمين واليسار */
+        }
+
+        /* لضمان التنسيق في حالة عدم استخدام Bootstrap CSS */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        }
+    </style>
+
+
+<div class="contact-form-section-wrapper">
+    <style>
+        .contact-form-section-wrapper {
+                        font-family: Calibri, sans-serif;
+                        direction: rtl;
+            padding: 50px 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        /* تنسيق العنوان الرئيسي في الأعلى */
+        .main-section-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 5px;
+            position: relative;
+        }
+
+            .main-section-title::after {
+                content: "";
+                display: block;
+                width: 80px;
+                height: 3px;
+                background-color: #007bff;
+                margin: 5px auto 30px;
+                border-radius: 2px;
+            }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+
+        /* تنسيق الحاوية الرئيسية للنموذج والبيانات */
+        .contact-box {
+            background-color: #ffffff;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        /* تنسيق جانب نموذج الإدخال (اليسار) */
+        .form-side {
+            padding: 15px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #343a40;
+            display: block;
+            text-align: right;
+            margin-bottom: 5px;
+        }
+
+        .form-control-custom {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-sizing: border-box; /* لضمان أن العرض يشمل البادينج */
+        }
+
+        textarea.form-control-custom {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* تنسيق زر الإرسال */
+        .submit-button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            float: right; /* لمحاذاة الزر لليمين */
+        }
+
+            .submit-button:hover {
+                background-color: #0056b3;
+            }
+
+        /* تنسيق جانب معلومات الاتصال (اليمين) */
+        .info-side {
+            background-color: #003366; /* اللون الأزرق الداكن */
+            color: #ffffff;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: right;
+        }
+
+            .info-side h2 {
+                font-size: 1.8rem;
+                font-weight: bold;
+                margin-bottom: 30px;
+                padding-right: 15px;
+                text-align: center; /* توسيط عنوان "تواصل معنا" */
+            }
+
+        /* تنسيق بطاقات المعلومات الفردية */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background-color: #004488; /* لون أزرق أغمق قليلاً لخلفية البطاقات */
+            border-radius: 10px;
+            text-align: right;
+        }
+
+        .contact-icon-placeholder {
+            /* مكان الأيقونة الدائرية - بدون أيقونات فعلية */
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-details {
+            display: block;
+        }
+
+            .contact-details .label {
+                font-weight: bold;
+                font-size: 1.1rem;
+                margin-bottom: 3px;
+            }
+
+            .contact-details .value {
+                font-size: 0.95rem;
+                opacity: 0.9;
+            }
+
+        /* محاكاة نظام الشبكة (Grid) لضمان العمل بدون ملف Bootstrap خارجي */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .col-md-6 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 15px;
+            box-sizing: border-box;
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        .info-side {
+            margin-top: 20px;
+        }
+
+        .submit-button {
+            float: none; /* توسيط الزر في الشاشات الصغيرة */
+            width: 100%;
+        }
+
+        }
+    </style>
+
+
