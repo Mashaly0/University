@@ -1,0 +1,42 @@
+﻿@model University.Models.Course
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "تعديل الكورس";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-warning text-white text-center">
+            <h3>@Localizer["Edit"]</h3>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label fw-bold"></label>
+                    <input asp-for="Name" class="form-control" placeholder=@Localizer["Name"] />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-4">
+                    <input asp-for="IsAvailable" class="form-check-input" />
+                    <label asp-for="IsAvailable" class="form-check-label">@Localizer["Available"]</label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success px-4">@Localizer["Save"]</button>
+                    <a asp-action="GetCourses" class="btn btn-secondary px-4">⬅️ @Localizer["Cancel"]</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

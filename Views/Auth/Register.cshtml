@@ -1,0 +1,136 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Register";
+}
+@if (!ViewData.ModelState.IsValid)
+{
+    foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+    {
+        <div class="alert alert-danger text-center">@error.ErrorMessage</div>
+    }
+}
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-success text-white text-center py-3">
+                    <h3 class="mb-0">📝 @Localizer["NewAcc"]</h3>
+                </div>
+
+                <div class="card-body p-4">
+                    <form id="registerForm"
+                          asp-controller="Auth"
+                          asp-action="Register"
+                          method="post"
+                          onsubmit="return validateForm()"
+                          novalidate>
+
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label fw-semibold">@Localizer["FullName"]</label>
+                            <input type="text" id="fullname" name="fullname" class="form-control form-control-lg" required />
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">@Localizer["Email"]</label>
+                            <input type="email" id="email" name="email" class="form-control form-control-lg" required />
+                        </div>
+
+                        <!-- Password -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label fw-semibold">@Localizer["Password"]</label>
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" minlength="6" required />
+                            <div class="form-text text-muted">@Localizer["Have"]</div>
+                        </div>
+
+                        <!-- Confirm Password -->
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label fw-semibold">@Localizer["ConfirmPass"]</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-control form-control-lg" required />
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                 <a href="#" class="text-decoration-none fw-semibold">@Localizer["Right"]</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2 fs-5 rounded-3">@Localizer["Restiser"]</button>
+                    </form>
+
+                    <!-- Error Message -->
+                    <div id="errorMsg" class="alert alert-danger mt-3 d-none text-center"></div>
+
+                    <!-- Success Message -->
+                    <div id="successMsg" class="alert alert-success mt-3 text-center">@ViewBag.Message</div>
+                </div>
+
+                <div class="card-footer text-center bg-light">
+                    <p class="mb-0">
+                        @Localizer["Already"]
+                        <a href="/Auth/Login" class="text-decoration-none fw-semibold">@Localizer["LogIn"]</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script>
+        function validateForm() {
+
+            const fullname = document.getElementById("fullname").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value.trim();
+            const confirmPassword = document.getElementById("confirmPassword").value.trim();
+            const termsCheck = document.getElementById("termsCheck");
+            const errorMsg = document.getElementById("errorMsg");
+
+            // Reset error
+            errorMsg.classList.add("d-none");
+            errorMsg.innerHTML = "";
+
+            // Check empty fields
+            if (!fullname || !email || !phone || !password || !confirmPassword) {
+                showError("الرجاء ملء جميع الحقول.");
+                return false;
+            }
+
+            // Password length
+            if (password.length < 6) {
+                showError("كلمة المرور يجب أن تكون 6 أحرف على الأقل.");
+                return false;
+            }
+
+            // Compare passwords
+            if (password !== confirmPassword) {
+                showError("كلمتا المرور غير متطابقتين.");
+                return false;
+            }
+
+            // Terms
+            if (!termsCheck.checked) {
+                showError("يجب الموافقة على الشروط والأحكام قبل التسجيل.");
+                return false;
+            }
+
+            return true; // Success
+        }
+
+        function showError(message) {
+            const errorMsg = document.getElementById("errorMsg");
+            errorMsg.innerHTML = message;
+            errorMsg.classList.remove("d-none");
+            errorMsg.scrollIntoView({ behavior: "smooth" });
+        }
+    </script>
+}
